@@ -27,5 +27,19 @@ if ($isOpenNewWindow)
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
         $controll,
+        [
+            'attribute' => 'level'
+        ],
+        [
+            'attribute' => 'category'
+        ],
+        [
+            'attribute' => 'prefix'
+        ],
+        [
+            'class'         => \skeeks\cms\grid\DateTimeColumnData::className(),
+            'attribute'     => 'log_time'
+        ],
+
     ],
 ]); ?>

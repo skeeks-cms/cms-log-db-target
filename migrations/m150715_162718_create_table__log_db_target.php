@@ -10,7 +10,7 @@ use yii\db\Migration;
 
 class m150715_162718_create_table__log_db_target extends Migration
 {
-    public function up()
+    public function safeUp()
     {
         $tableExist = $this->db->getTableSchema("{{%log_db_target}}", true);
         if ($tableExist)
@@ -36,10 +36,10 @@ CREATE TABLE log_db_target (
 )
 SQL;
 
-        $this->db->createCommand();
+        $this->db->createCommand($sql)->execute();
     }
 
-    public function down()
+    public function safeDown()
     {
         $this->dropTable("{{%log_db_target}}");
     }

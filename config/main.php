@@ -11,7 +11,7 @@ return [
         'log' => [
             'targets' => [
                 [
-                    'class'     => 'skeeks\cms\LogDbTarget\LogDbTarget',
+                    'class'     => 'skeeks\cms\logDbTarget\LogDbTarget',
                     'logVars'   => [],
                     'levels' => [
                         'error',
@@ -24,8 +24,8 @@ return [
 
     'modules' =>
     [
-        'LogDbTarget' => [
-            'class'         => '\skeeks\cms\LogDbTarget\Module',
+        'logDbTarget' => [
+            'class'         => '\skeeks\cms\logDbTarget\Module',
         ]
     ]
 ];

@@ -5,10 +5,11 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 15.05.2015
  */
-namespace skeeks\cms\LogDbTarget\controllers;
+namespace skeeks\cms\logDbTarget\controllers;
 
-use skeeks\cms\LogDbTarget\models\LogDbTargetModel;
+use skeeks\cms\logDbTarget\models\LogDbTargetModel;
 use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class AdminLogDbTargetController
@@ -23,5 +24,25 @@ class AdminLogDbTargetController extends AdminModelEditorController
         $this->modelClassName           = LogDbTargetModel::className();
 
         parent::init();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actions()
+    {
+        $actions = ArrayHelper::merge(parent::actions(),
+            [
+                "update" =>
+                [
+                    "name"         => "Смотреть",
+                    "icon"          => "glyphicon glyphicon-pencil",
+                ],
+            ]
+        );
+
+        unset($actions['create']);
+
+        return $actions;
     }
 }
