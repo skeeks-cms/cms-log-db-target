@@ -41,5 +41,15 @@ if ($isOpenNewWindow)
             'attribute'     => 'log_time'
         ],
 
+        [
+            'class'         => \yii\grid\DataColumn::className(),
+            'value'         => function($model)
+            {
+                return "<pre><code>" . substr(\yii\helpers\Html::encode($model->message), 0, 200) . '</code></pre>';
+            },
+            'attribute'     => 'message',
+            'format'        => 'raw'
+        ],
+
     ],
 ]); ?>
