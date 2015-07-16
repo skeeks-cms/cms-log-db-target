@@ -8,15 +8,14 @@
 return [
     'components' =>
     [
+        'logDbTargetSettings' => [
+            'class'     => 'skeeks\cms\logDbTarget\components\LogDbTargetSettings',
+        ],
+
         'log' => [
             'targets' => [
                 [
                     'class'     => 'skeeks\cms\logDbTarget\LogDbTarget',
-                    //'logVars'   => [],
-                    'levels' => [
-                        'error',
-                        'warning'
-                    ],
                 ],
             ],
         ]
@@ -25,7 +24,7 @@ return [
     'modules' =>
     [
         'logDbTarget' => [
-            'class'         => '\skeeks\cms\logDbTarget\Module',
+            'class'         => '\skeeks\cms\logDbTarget\ConsoleModule',
         ]
     ]
 ];

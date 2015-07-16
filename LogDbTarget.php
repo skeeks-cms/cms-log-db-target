@@ -7,6 +7,7 @@
  */
 namespace skeeks\cms\LogDbTarget;
 
+use skeeks\cms\components\Cms;
 use yii\log\DbTarget;
 
 /**
@@ -16,4 +17,15 @@ use yii\log\DbTarget;
 class LogDbTarget extends DbTarget
 {
     public $logTable = '{{%log_db_target}}';
+
+    public function init()
+    {
+        parent::init();
+
+        $this->logVars      = (array) \Yii::$app->logDbTargetSettings->logVars;
+        $this->levels       = (array) \Yii::$app->logDbTargetSettings->getSafeLevels();
+        $this->except       = (array) \Yii::$app->logDbTargetSettings->getExcept();
+        $this->categories   = (array) \Yii::$app->logDbTargetSettings->getCategories();
+        $this->enabled      = (bool) (\Yii::$app->logDbTargetSettings->enabled == Cms::BOOL_Y);
+    }
 }
