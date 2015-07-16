@@ -14,13 +14,13 @@ use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
         'category',
         [
             'attribute' => 'log_time',
-            'value' => \Yii::$app->formatter->asDatetime($model->log_time, 'full') . " (" . \Yii::$app->formatter->asRelativeTime($model->log_time) . ")"
+            'value'     => \Yii::$app->formatter->asDatetime($model->log_time, 'full') . " (" . \Yii::$app->formatter->asRelativeTime($model->log_time) . ")"
         ],
         'prefix',
         [
             'attribute'     => 'message',
             'format'        => 'html',
-            'value'         => "<pre>" . $model->message . "</pre>"
+            'value'         => "<pre><code>" . Html::encode($model->message) . "</code></pre>"
         ],
     ],
 ])
