@@ -8,25 +8,13 @@
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-
-
-$controll = [
-    'class'         => \skeeks\cms\modules\admin\grid\ActionColumn::className(),
-    'controller'    => $controller
-];
-
-if ($isOpenNewWindow)
-{
-    $controll['isOpenNewWindow'] = true;
-}
 ?>
 
-<?= \skeeks\cms\modules\admin\widgets\GridViewHasSettings::widget([
+<?= \skeeks\cms\modules\admin\widgets\GridViewStandart::widget([
     'dataProvider'  => $dataProvider,
     'filterModel'   => $searchModel,
+    'adminController'   => $controller,
     'columns' => [
-        ['class' => 'yii\grid\SerialColumn'],
-        $controll,
         [
             'attribute' => 'level',
             'value'         => function($model)
@@ -46,7 +34,8 @@ if ($isOpenNewWindow)
             'attribute' => 'category'
         ],
         [
-            'attribute' => 'prefix'
+            'attribute' => 'prefix',
+            'visible' => false
         ],
         [
             'class'         => \skeeks\cms\grid\DateTimeColumnData::className(),
