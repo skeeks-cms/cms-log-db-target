@@ -12,8 +12,23 @@ return [
         [
             [
                 "label"     => "Логи",
-                "url"       => ["logDbTarget/admin-log-db-target"],
                 "img"       => ['\skeeks\cms\logDbTarget\assets\LogDbTargetAsset', 'icons/log.png'],
+
+                'items' =>
+                [
+                    [
+                        "label"     => "Логи",
+                        "url"       => ["logDbTarget/admin-log-db-target"],
+                        "img"       => ['\skeeks\cms\logDbTarget\assets\LogDbTargetAsset', 'icons/log.png'],
+                    ],
+
+                    [
+                        "label" => "Настройки",
+                        "url"   => ["cms/admin-settings", "component" => 'skeeks\cms\LogDbTarget\components\LogDbTargetSettings'],
+                        "img"       => ['\skeeks\cms\modules\admin\assets\AdminAsset', 'images/icons/settings.png'],
+                    ],
+
+                ]
             ],
         ]
     ]
