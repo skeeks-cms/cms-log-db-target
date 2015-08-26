@@ -6,7 +6,7 @@
  * @date 15.07.2015
  */
 return [
-    'dev' =>
+    'other' =>
     [
         'items' =>
         [
