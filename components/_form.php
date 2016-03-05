@@ -6,13 +6,9 @@
  * @date 27.03.2015
  */
 use yii\helpers\Html;
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
-
 /* @var $this yii\web\View */
 /* @var $model \skeeks\cms\LogDbTarget\components\LogDbTargetSettings */
 ?>
-<?php $form = ActiveForm::begin(); ?>
-
 
 <?= $form->fieldSet('Настройки логирования'); ?>
 
@@ -38,7 +34,5 @@ use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
     <?= $form->fieldInputInt($model, 'storeLogsTime')->hint('Если не хотите чтобы логи удалилсь вообще, установите значение 0.'); ?>
 <?= $form->fieldSetEnd(); ?>
 
-<?= $form->buttonsCreateOrUpdate($model); ?>
-<?php ActiveForm::end(); ?>
 
 

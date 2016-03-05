@@ -14,6 +14,7 @@ use yii\base\Event;
 use yii\console\Application;
 use yii\helpers\ArrayHelper;
 use yii\log\Logger;
+use yii\widgets\ActiveForm;
 
 /**
  * Class LogDbTargetSettings
@@ -124,6 +125,15 @@ class LogDbTargetSettings extends Component
             'enabled'                   => 'Включен или выключен',
             'storeLogsTime'             => 'Время хранения логов (сек.)',
         ]);
+    }
+
+
+    public function renderConfigForm(ActiveForm $form)
+    {
+        echo \Yii::$app->view->renderFile(__DIR__ . '/_form.php', [
+            'form'  => $form,
+            'model' => $this
+        ], $this);
     }
 
     /**
