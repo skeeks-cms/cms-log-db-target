@@ -40,7 +40,7 @@ class LogDbTargetSettings extends Component
     static public function descriptorConfig()
     {
         return array_merge(parent::descriptorConfig(), [
-            'name'          => 'Логирование ошибок в базу mysql',
+            'name'          => \Yii::t('skeeks/logdb/app', 'Logging errors in the mysql database'),
         ]);
     }
 
