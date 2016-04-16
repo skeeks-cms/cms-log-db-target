@@ -1,6 +1,10 @@
 Процесс разработки модуля.
 ==============
   
+1.1.3
+-----------------
+  * Change console controller
+ 
 1.1.2
 -----------------
   * Start of internationalization
