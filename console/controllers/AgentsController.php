@@ -6,7 +6,7 @@
  * @date 07.03.2015
  */
 namespace skeeks\cms\logDbTarget\console\controllers;
-use skeeks\cms\base\console\Controller;
+use yii\console\Controller;
 use skeeks\cms\logDbTarget\models\LogDbTargetModel;
 
 /**
