@@ -77,32 +77,6 @@ class LogDbTargetSettings extends Component
      */
     public $storeLogsTime      = 432000; //5 дней
 
-
-    public function init()
-    {
-        parent::init();
-
-        if (\Yii::$app instanceof Application)
-        {
-            \Yii::$app->on(Cms::EVENT_AFTER_UPDATE, function(Event $e)
-            {
-
-                //Вставка агентов
-                if (!CmsAgent::find()->where(['name' => 'logDbTarget/agents/clear-logs'])->one())
-                {
-                    ( new CmsAgent([
-                        'name'              => 'logDbTarget/agents/clear-logs',
-                        'description'       => 'Чистка mysql логов',
-                        'agent_interval'    => 3600*3, //раз в три часа
-                        'next_exec_at'      => \Yii::$app->formatter->asTimestamp(time()) + 3600*3,
-                        'is_period'         => Cms::BOOL_N
-                    ]) )->save();
-                }
-
-            });
-        }
-    }
-
     public function rules()
     {
         return ArrayHelper::merge(parent::rules(), [

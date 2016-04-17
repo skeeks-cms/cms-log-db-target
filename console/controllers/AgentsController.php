@@ -26,6 +26,6 @@ class AgentsController extends Controller
             '<=', 'log_time', \Yii::$app->formatter->asTimestamp(time()) - (int) \Yii::$app->logDbTargetSettings->storeLogsTime
         ]);
 
-        \Yii::info("Удалено логов: " . $deleted);
+        \Yii::info(\Yii::t('skeeks/logdb/app', 'The number of remote logging') . ": " . $deleted);
     }
 }

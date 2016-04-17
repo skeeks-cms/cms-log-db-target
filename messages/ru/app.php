@@ -10,4 +10,5 @@ return
     'Logging errors in the mysql database' => 'Логирование ошибок в базу mysql',
     'Logs' => 'Логи',
     'Settings' => 'Настройки',
+    'The number of remote logging' => 'Количество удаленных логов',
 ];
