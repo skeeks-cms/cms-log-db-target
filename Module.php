@@ -10,7 +10,7 @@ namespace skeeks\cms\logDbTarget;
  * Class Module
  * @package skeeks\cms\logDbTarget
  */
-class Module extends \skeeks\cms\base\Module
+class Module extends \yii\web\Module
 {
     public $controllerNamespace = 'skeeks\cms\logDbTarget\controllers';
 }

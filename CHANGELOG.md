@@ -3,6 +3,7 @@
   
 1.1.4
 -----------------
+  * Removed skeeks/cms/base/Module
   * Change agents
 
 1.1.3
