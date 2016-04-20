@@ -6,7 +6,6 @@
  * @date 15.06.2015
  */
 return [
-    'bootstrap' => ['log'],
 
     'components' =>
     [
