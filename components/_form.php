@@ -10,7 +10,7 @@ use yii\helpers\Html;
 /* @var $model \skeeks\cms\LogDbTarget\components\LogDbTargetSettings */
 ?>
 
-<?= $form->fieldSet('Настройки логирования'); ?>
+<?= $form->fieldSet(\Yii::t('skeeks/logdb/app', 'Logging options')); ?>
 
     <?= $form->fieldRadioListBoolean($model, 'enabled'); ?>
 

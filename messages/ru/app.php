@@ -11,4 +11,5 @@ return
     'Logs' => 'Логи',
     'Settings' => 'Настройки',
     'The number of remote logging' => 'Количество удаленных логов',
+    'Logging options' => 'Настройки логирования',
 ];
