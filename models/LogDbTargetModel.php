@@ -47,12 +47,12 @@ class LogDbTargetModel extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'ID'),
-            'level' => Yii::t('app', 'Level'),
-            'category' => Yii::t('app', 'Category'),
-            'log_time' => Yii::t('app', 'Log Time'),
-            'prefix' => Yii::t('app', 'Prefix'),
-            'message' => Yii::t('app', 'Message'),
+            'id' => \Yii::t('skeeks/logdb/app', 'ID'),
+            'level' => \Yii::t('skeeks/logdb/app', 'Level'),
+            'category' => \Yii::t('skeeks/logdb/app', 'Category'),
+            'log_time' => \Yii::t('skeeks/logdb/app', 'Log Time'),
+            'prefix' => \Yii::t('skeeks/logdb/app', 'Prefix'),
+            'message' => \Yii::t('skeeks/logdb/app', 'Message'),
         ];
     }
 }

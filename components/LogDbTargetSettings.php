@@ -92,12 +92,12 @@ class LogDbTargetSettings extends Component
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'levels'                    => 'Уровни ошибок',
-            'logVars'                   => 'Дополнительные данные для логирования',
-            'exceptString'              => 'Не логировать',
-            'categoriesString'          => 'Логировать только категории',
-            'enabled'                   => 'Включен или выключен',
-            'storeLogsTime'             => 'Время хранения логов (сек.)',
+            'levels'                    => \Yii::t('skeeks/logdb/app','Error levels'),
+            'logVars'                   => \Yii::t('skeeks/logdb/app','Additional information for logging'),
+            'exceptString'              => \Yii::t('skeeks/logdb/app','Not logging'),
+            'categoriesString'          => \Yii::t('skeeks/logdb/app','Logging only categies'),
+            'enabled'                   => \Yii::t('skeeks/logdb/app','On or off'),
+            'storeLogsTime'             => \Yii::t('skeeks/logdb/app','Time storage of logs (sec.)'),
         ]);
     }
 

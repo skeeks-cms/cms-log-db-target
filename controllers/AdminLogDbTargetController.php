@@ -19,7 +19,7 @@ class AdminLogDbTargetController extends AdminModelEditorController
 {
     public function init()
     {
-        $this->name                     = "Управление логами";
+        $this->name                     = \Yii::t('skeeks/logdb/app',"Managing logs");
         $this->modelShowAttribute       = "id";
         $this->modelClassName           = LogDbTargetModel::className();
 
@@ -35,7 +35,7 @@ class AdminLogDbTargetController extends AdminModelEditorController
             [
                 "update" =>
                 [
-                    "name"         => "Смотреть",
+                    "name"         => \Yii::t('skeeks/logdb/app',"Watch"),
                     "icon"          => "glyphicon glyphicon-pencil",
                 ],
             ]
