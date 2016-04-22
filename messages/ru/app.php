@@ -12,4 +12,17 @@ return
     'Settings' => 'Настройки',
     'The number of remote logging' => 'Количество удаленных логов',
     'Logging options' => 'Настройки логирования',
+    'Cleaning mysql logs' => 'Чистка mysql логов',
+    'Cleaning logs' => 'Чистка логов',
+    'If you do not want to deleted all logs, set to 0.' => 'Если не хотите чтобы логи удалилсь вообще, установите значение 0.',
+
+    'Error levels' => 'Уровни ошибок',
+    'Additional information for logging' => 'Дополнительные данные для логирования',
+    'Not logging' => 'Не логировать',
+    'Logging only categies' => 'Логировать только категории',
+    'On or off' => 'Включен или выключен',
+    'Time storage of logs (sec.)' => 'Время хранения логов (сек.)',
+
+    'Managing logs' => 'Управление логами',
+    'Watch' => 'Смотреть',
 ];

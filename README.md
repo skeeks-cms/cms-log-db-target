@@ -7,4 +7,4 @@
 <i>SkeekS CMS (Yii2) — быстро, просто, эффективно!</i>  
 [skeeks.com](http://skeeks.com) | [cms.skeeks.com](http://cms.skeeks.com) | [marketplace.cms.skeeks.com](http://marketplace.cms.skeeks.com)
 
-Локализация
+Локализация 
