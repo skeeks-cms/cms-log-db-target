@@ -1,6 +1,6 @@
 {
     "name": "skeeks/cms-log-db-target",
-    "description": "Error logging in mysql database for SkeekS CMS >= 2.0",
+    "description": "Error logging in mysql database for SkeekS CMS",
     "keywords": ["module", "cms", "skeeks", "sx", "app", "yii2", "logger", "log", "target"],
     "homepage": "http://www.skeeks.com/",
     "type": "yii2-extension",
