@@ -1,8 +1,14 @@
-Процесс разработки модуля.
+CHANGELOG
 ==============
-  
-  
-  
+
+1.2.1
+-----------------
+  * Added filters in the admin part
+
+1.2.0
+-----------------
+  * Message LONG TEXT
+
 1.1.4
 -----------------
   * Removed skeeks/cms/base/Module

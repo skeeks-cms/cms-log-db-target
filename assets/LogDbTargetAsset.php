@@ -6,7 +6,7 @@
  * @date 15.07.2015
  */
 namespace skeeks\cms\logDbTarget\assets;
-use yii\web\AssetBundle;
+use skeeks\cms\base\AssetBundle;
 
 /**
  * Class LogDbTargetAsset
