@@ -22,7 +22,7 @@ class LogDbTarget extends DbTarget
     {
         parent::init();
 
-        $this->logVars      = (array) \Yii::$app->logDbTargetSettings->logVars;
+        $this->logVars      = \Yii::$app->logDbTargetSettings->logVars ? (array) \Yii::$app->logDbTargetSettings->logVars : [];
         $this->levels       = (array) \Yii::$app->logDbTargetSettings->getSafeLevels();
         $this->except       = (array) \Yii::$app->logDbTargetSettings->getExcept();
         $this->categories   = (array) \Yii::$app->logDbTargetSettings->getCategories();

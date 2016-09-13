@@ -30,7 +30,7 @@ use yii\helpers\Html;
 
 <?= $form->fieldSetEnd(); ?>
 
-<?= $form->fieldSet(\Y::t('skeeks/logdb/app','Cleaning logs')); ?>
+<?= $form->fieldSet(\Yii::t('skeeks/logdb/app','Cleaning logs')); ?>
     <?= $form->fieldInputInt($model, 'storeLogsTime')->hint(\Yii::t('skeeks/logdb/app','If you do not want to deleted all logs, set to 0.')); ?>
 <?= $form->fieldSetEnd(); ?>
 

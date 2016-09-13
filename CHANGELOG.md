@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.2.2
+-----------------
+  * Fixed notice
+
 1.2.1
 -----------------
   * Added filters in the admin part
