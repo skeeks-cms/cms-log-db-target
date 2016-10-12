@@ -30,4 +30,5 @@ return
     'Category' => 'Категория',
     'Log Time' => 'Время',
     'Message' => 'Сообщение',
+    'How many messages should be accumulated before they are exported' => 'Сколько сообщений должно быть накоплено, прежде чем они экспортируются',
 ];

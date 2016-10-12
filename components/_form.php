@@ -27,6 +27,7 @@ use yii\helpers\Html;
 
     <?= $form->field($model, 'exceptString')->textarea(); ?>
     <?= $form->field($model, 'categoriesString')->textarea(); ?>
+    <?= $form->field($model, 'exportInterval'); ?>
 
 <?= $form->fieldSetEnd(); ?>
 

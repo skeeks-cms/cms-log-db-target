@@ -70,7 +70,12 @@ class LogDbTargetSettings extends Component
     /**
      * @var string
      */
-    public $enabled     = Cms::BOOL_Y;
+    public $enabled             = Cms::BOOL_Y;
+
+    /**
+     * @var int
+     */
+    public $exportInterval      = 9999999999;
 
     /**
      * @var int
@@ -86,6 +91,7 @@ class LogDbTargetSettings extends Component
             [['categoriesString'], 'string'],
             [['enabled'], 'string'],
             [['storeLogsTime'], 'integer'],
+            [['exportInterval'], 'integer'],
         ]);
     }
 
@@ -98,6 +104,7 @@ class LogDbTargetSettings extends Component
             'categoriesString'          => \Yii::t('skeeks/logdb/app','Logging only categies'),
             'enabled'                   => \Yii::t('skeeks/logdb/app','On or off'),
             'storeLogsTime'             => \Yii::t('skeeks/logdb/app','Time storage of logs (sec.)'),
+            'exportInterval'            => \Yii::t('skeeks/logdb/app','How many messages should be accumulated before they are exported'),
         ]);
     }
 

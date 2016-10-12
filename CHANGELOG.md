@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.3
+-----------------
+  * Fixed mysql errors 'Got timeout reading communication packets'
+
 1.2.2
 -----------------
   * Fixed notice
