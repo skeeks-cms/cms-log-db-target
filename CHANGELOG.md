@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.3.2
+-----------------
+  * Admin menu icon
+
 1.3.1
 -----------------
   * logDbTarget/flush/logs

@@ -25,7 +25,7 @@ return [
                     [
                         "label" => \Yii::t('skeeks/logdb/app', 'Settings'),
                         "url"   => ["cms/admin-settings", "component" => 'skeeks\cms\LogDbTarget\components\LogDbTargetSettings'],
-                        "img"       => ['skeeks\cms\assets\CmsAsset', 'images/icons/settings.png'],
+                        "img"       => ['\skeeks\cms\assets\CmsAsset', 'images/icons/settings-big.png'],
                     ],
 
                 ]
