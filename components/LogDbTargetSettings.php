@@ -123,6 +123,11 @@ class LogDbTargetSettings extends Component
     public function getSafeLevels()
     {
         $result = [];
+        if (!$this->levels)
+        {
+            return [];
+        }
+
         foreach ($this->levels as $key => $level)
         {
             if (in_array($level, self::$levelMap))
