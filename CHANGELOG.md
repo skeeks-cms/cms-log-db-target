@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.3.4
+-----------------
+  * Fixed
+  
 1.3.3
 -----------------
   * Fixed
@@ -12,6 +16,10 @@ CHANGELOG
 1.3.1
 -----------------
   * logDbTarget/flush/logs
+
+1.3
+-----------------
+  * Fixed mysql errors 'Got timeout reading communication packets'
 
 1.3
 -----------------
