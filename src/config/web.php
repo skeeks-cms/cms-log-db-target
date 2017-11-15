@@ -8,8 +8,7 @@
 return [
     'bootstrap' => ['log'],
 
-    'components' =>
-    [
+    'components' => [
         'i18n' => [
             'translations' =>
             [

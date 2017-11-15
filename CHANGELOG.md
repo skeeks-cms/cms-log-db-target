@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.4.1
+-----------------
+ * Agents copnfig update
+ 
 1.4.0
 -----------------
  * Using composer-config-plugin
