@@ -2,12 +2,12 @@
     "name": "skeeks/cms-log-db-target",
     "description": "Error logging in mysql database for SkeekS CMS",
     "keywords": ["module", "cms", "skeeks", "sx", "app", "yii2", "logger", "log", "target"],
-    "homepage": "http://www.skeeks.com/",
+    "homepage": "https://skeeks.com/",
     "type": "yii2-extension",
     "license": "GPL-3.0+",
     "support": {
-        "issues": "http://cms.skeeks.com",
-        "wiki": "http://en.cms.skeeks.com/docs",
+        "issues": "https://cms.skeeks.com",
+        "wiki": "https://cms.skeeks.com/docs",
         "source": "https://github.com/skeeks-cms/cms-log-db-target"
     },
     "authors": [
