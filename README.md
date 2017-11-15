@@ -61,9 +61,8 @@ Configuration app
 ```
 
 ##Links
-* [Web site](http://en.cms.skeeks.com)
-* [Web site (rus)](http://cms.skeeks.com)
-* [Author](http://skeeks.com)
+* [Web site](https://cms.skeeks.com)
+* [Author](https://skeeks.com)
 * [ChangeLog](https://github.com/skeeks-cms/cms-log-db-target/blob/master/CHANGELOG.md)
 
 
