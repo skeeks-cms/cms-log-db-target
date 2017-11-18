@@ -43,7 +43,7 @@ class m150715_162718_create_table__log_db_target extends Migration
                 'level' => $this->integer(),
                 'category' => $this->string(255),
 
-                'log_time' => 'double precision',
+                'log_time' => $this->double(),
 
                 'prefix' => $this->text(),
                 'message' => $this->text(),
