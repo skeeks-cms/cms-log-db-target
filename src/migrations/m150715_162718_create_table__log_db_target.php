@@ -22,20 +22,38 @@ class m150715_162718_create_table__log_db_target extends Migration
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+
+            $this->createTable($tableName, [
+                'id' => $this->primaryKey(),
+
+                'level' => $this->integer(),
+                'category' => $this->string(255),
+
+                'log_time' => $this->integer(),
+
+                'prefix' => $this->text(),
+                'message' => $this->text(),
+
+            ], $tableOptions);
+
+        } else if ($this->db->driverName == 'pgsql') {
+            $this->createTable($tableName, [
+                'id' => $this->primaryKey(),
+
+                'level' => $this->integer(),
+                'category' => $this->string(255),
+
+                'log_time' => 'double precision',
+
+                'prefix' => $this->text(),
+                'message' => $this->text(),
+
+            ], $tableOptions);
+        } else {
+            throw new Exception('!!!');
         }
 
-        $this->createTable($tableName, [
-            'id' => $this->primaryKey(),
 
-            'level' => $this->integer(),
-            'category' => $this->string(255),
-
-            'log_time' => $this->integer(),
-
-            'prefix' => $this->text(),
-            'message' => $this->text(),
-
-        ], $tableOptions);
 
         $this->createIndex('idx_log_level', $tableName, 'level');
         $this->createIndex('idx_log_category', $tableName, 'category');
