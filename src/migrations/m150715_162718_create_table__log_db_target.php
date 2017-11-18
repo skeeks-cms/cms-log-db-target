@@ -12,7 +12,8 @@ class m150715_162718_create_table__log_db_target extends Migration
 {
     public function safeUp()
     {
-        $tableExist = $this->db->getTableSchema("{{%log_db_target}}", true);
+        $tableName = '{{%log_db_target}}';
+        $tableExist = $this->db->getTableSchema($tableName, true);
         if ($tableExist)
         {
             return true;
@@ -23,20 +24,22 @@ class m150715_162718_create_table__log_db_target extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
         }
 
-        $sql = <<<SQL
-CREATE TABLE log_db_target (
-  id       BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  level    INTEGER,
-  category VARCHAR(255),
-  log_time INTEGER,
-  prefix   TEXT,
-  message  TEXT,
-  INDEX idx_log_level (level),
-  INDEX idx_log_category (category)
-)
-SQL;
+        $this->createTable($tableName, [
+            'id' => $this->primaryKey(),
 
-        $this->db->createCommand($sql)->execute();
+            'level' => $this->integer(),
+            'category' => $this->string(255),
+
+            'log_time' => $this->integer(),
+
+            'prefix' => $this->text(),
+            'message' => $this->text(),
+
+        ], $tableOptions);
+
+        $this->createIndex('idx_log_level', $tableName, 'level');
+        $this->createIndex('idx_log_category', $tableName, 'category');
+
     }
 
     public function safeDown()

@@ -1,6 +1,10 @@
 CHANGELOG
 ==============
 
+1.4.2
+-----------------
+ * Pgsql support
+ 
 1.4.1
 -----------------
  * Agents copnfig update
