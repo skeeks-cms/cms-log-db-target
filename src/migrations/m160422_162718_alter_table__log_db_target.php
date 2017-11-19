@@ -12,13 +12,11 @@ class m160422_162718_alter_table__log_db_target extends Migration
 {
     public function safeUp()
     {
-
         if ($this->db->driverName === 'mysql') {
             $this->alterColumn('{{%log_db_target}}', 'message', "longtext");
         } else {
             $this->alterColumn('{{%log_db_target}}', 'message', $this->text());
         }
-        $this->db->createCommand($sql)->execute();
     }
 
     public function safeDown()
