@@ -6,7 +6,7 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 
-namespace skeeks\cms\LogDbTarget;
+namespace skeeks\cms\logDbTarget;
 
 use skeeks\cms\components\Cms;
 

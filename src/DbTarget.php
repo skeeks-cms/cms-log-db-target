@@ -6,7 +6,7 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 
-namespace skeeks\cms\LogDbTarget;
+namespace skeeks\cms\logDbTarget;
 
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
