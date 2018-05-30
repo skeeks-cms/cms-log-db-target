@@ -1,27 +1,29 @@
 <?php
 /**
+ * @link https://cms.skeeks.com/
+ * @copyright Copyright (c) 2010 SkeekS
+ * @license https://cms.skeeks.com/license/
  * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 15.05.2015
  */
+
 namespace skeeks\cms\logDbTarget\controllers;
 
+use skeeks\cms\backend\controllers\BackendModelStandartController;
+use skeeks\cms\grid\DateTimeColumnData;
 use skeeks\cms\logDbTarget\models\LogDbTargetModel;
-use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
+use skeeks\yii2\form\fields\SelectField;
 use yii\helpers\ArrayHelper;
 
 /**
- * Class AdminLogDbTargetController
- * @package skeeks\cms\LogDbTarget\controllers
+ * @author Semenov Alexander <semenov@skeeks.com>
  */
-class AdminLogDbTargetController extends AdminModelEditorController
+class AdminLogDbTargetController extends BackendModelStandartController
 {
     public function init()
     {
-        $this->name                     = \Yii::t('skeeks/logdb/app',"Managing logs");
-        $this->modelShowAttribute       = "id";
-        $this->modelClassName           = LogDbTargetModel::className();
+        $this->name = \Yii::t('skeeks/logdb/app', "Managing logs");
+        $this->modelShowAttribute = "id";
+        $this->modelClassName = LogDbTargetModel::className();
 
         parent::init();
     }
@@ -31,18 +33,71 @@ class AdminLogDbTargetController extends AdminModelEditorController
      */
     public function actions()
     {
-        $actions = ArrayHelper::merge(parent::actions(),
-            [
-                "update" =>
-                [
-                    "name"         => \Yii::t('skeeks/logdb/app',"Watch"),
-                    "icon"          => "glyphicon glyphicon-pencil",
+        return ArrayHelper::merge(parent::actions(), [
+            'index' => [
+                "filters" => [
+                    'visibleFilters' => [
+                        'level',
+                        'category',
+                        'message',
+                        'log_time',
+                    ],
+
+                    'filtersModel' => [
+                        'fields' => [
+                            'level' => [
+                                'field' => [
+                                    'class' => SelectField::class,
+                                    'items' => [
+                                        \yii\log\Logger::LEVEL_ERROR         => 'error',
+                                        \yii\log\Logger::LEVEL_WARNING       => 'warning',
+                                        \yii\log\Logger::LEVEL_INFO          => 'info',
+                                        \yii\log\Logger::LEVEL_TRACE         => 'trace',
+                                        \yii\log\Logger::LEVEL_PROFILE_BEGIN => 'profile begin',
+                                        \yii\log\Logger::LEVEL_PROFILE_END   => 'profile end',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+
                 ],
-            ]
-        );
-
-        unset($actions['create']);
-
-        return $actions;
+                'grid'    => [
+                    'defaultOrder'   => [
+                        'log_time' => SORT_DESC,
+                    ],
+                    'visibleColumns' => [
+                        'checkbox',
+                        'actions',
+                        'level',
+                        'category',
+                        'log_time',
+                        'prefix',
+                        'message',
+                    ],
+                    'columns'        => [
+                        'log_time' => [
+                            'class' => DateTimeColumnData::class,
+                        ],
+                        'level'    => [
+                            'value' => function ($model) {
+                                return \yii\log\Logger::getLevelName($model->level);
+                            },
+                        ],
+                        'message'  => [
+                            'value' => function ($model) {
+                                return "<pre><code>".substr(\yii\helpers\Html::encode($model->message), 0, 1000).'</code></pre>';
+                            },
+                        ],
+                    ],
+                ],
+            ],
+            /*"create" => [
+                'fields' => [$this, 'updateFields'],
+            ],
+            "update" => [
+                'fields' => [$this, 'updateFields'],
+            ],*/
+        ]);
     }
 }
