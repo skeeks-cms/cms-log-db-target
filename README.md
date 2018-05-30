@@ -60,7 +60,8 @@ Configuration app
 
 ```
 
-##Links
+Links
+-----
 * [Web site](https://cms.skeeks.com)
 * [Author](https://skeeks.com)
 * [ChangeLog](https://github.com/skeeks-cms/cms-log-db-target/blob/master/CHANGELOG.md)

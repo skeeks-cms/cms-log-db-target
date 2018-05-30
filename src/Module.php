@@ -5,7 +5,9 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 03.07.2015
  */
+
 namespace skeeks\cms\logDbTarget;
+
 /**
  * Class Module
  * @package skeeks\cms\logDbTarget

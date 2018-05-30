@@ -5,7 +5,9 @@
  * @copyright 2010 SkeekS (СкикС)
  * @date 15.07.2015
  */
+
 namespace skeeks\cms\logDbTarget\assets;
+
 use skeeks\cms\base\AssetBundle;
 
 /**
