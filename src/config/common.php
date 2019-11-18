@@ -46,6 +46,22 @@ return [
         'logDbTargetSettings' => [
             'class' => 'skeeks\cms\logDbTarget\components\LogDbTargetSettings',
         ],
+
+        'authManager' => [
+            'config' => [
+                'roles' => [
+                    [
+                        'name'  => \skeeks\cms\rbac\CmsManager::ROLE_ADMIN,
+                        'child' => [
+                            //Есть доступ к системе администрирования
+                            'permissions' => [
+                                "logDbTarget/admin-log-db-target",
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
 
     'modules' => [

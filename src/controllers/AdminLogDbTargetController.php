@@ -25,6 +25,8 @@ class AdminLogDbTargetController extends BackendModelStandartController
         $this->modelShowAttribute = "id";
         $this->modelClassName = LogDbTargetModel::className();
 
+        $this->generateAccessActions = false;
+
         parent::init();
     }
 

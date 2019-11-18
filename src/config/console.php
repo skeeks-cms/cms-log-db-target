@@ -6,6 +6,15 @@
  * @author Semenov Alexander <semenov@skeeks.com>
  */
 return [
+
+    'controllerMap' => [
+        'migrate' => [
+            'migrationPath' => [
+                '@skeeks/cms/logDbTarget/migrations',
+            ],
+        ],
+    ],
+
     'modules' => [
         'logDbTarget' => [
             'controllerNamespace' => 'skeeks\cms\logDbTarget\console\controllers',
