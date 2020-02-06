@@ -107,9 +107,9 @@ class LogDbTargetSettings extends Component
     }
 
 
-    public function renderConfigForm(ActiveForm $form)
+    public function renderConfigFormFields(ActiveForm $form)
     {
-        echo \Yii::$app->view->renderFile(__DIR__.'/_form.php', [
+        return \Yii::$app->view->renderFile(__DIR__.'/_form.php', [
             'form'  => $form,
             'model' => $this,
         ], $this);
