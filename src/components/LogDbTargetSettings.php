@@ -8,6 +8,7 @@
 
 namespace skeeks\cms\LogDbTarget\components;
 
+use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
 use skeeks\cms\components\Cms;
 use skeeks\cms\models\CmsAgent;
@@ -106,6 +107,10 @@ class LogDbTargetSettings extends Component
         ]);
     }
 
+    public function beginConfigForm()
+    {
+        return ActiveFormBackend::begin();
+    }
 
     public function renderConfigFormFields(ActiveForm $form)
     {
