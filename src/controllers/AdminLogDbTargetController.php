@@ -11,6 +11,7 @@ namespace skeeks\cms\logDbTarget\controllers;
 use skeeks\cms\backend\controllers\BackendModelStandartController;
 use skeeks\cms\grid\DateTimeColumnData;
 use skeeks\cms\logDbTarget\models\LogDbTargetModel;
+use skeeks\cms\rbac\CmsManager;
 use skeeks\yii2\form\fields\SelectField;
 use yii\helpers\ArrayHelper;
 
@@ -26,12 +27,7 @@ class AdminLogDbTargetController extends BackendModelStandartController
         $this->modelClassName = LogDbTargetModel::className();
 
         $this->generateAccessActions = false;
-        $this->accessCallback = function () {
-            if (!\Yii::$app->skeeks->site->is_default) {
-                return false;
-            }
-            return \Yii::$app->user->can($this->uniqueId);
-        };
+        $this->permissionName = CmsManager::PERMISSION_ROLE_ADMIN_ACCESS;
 
         parent::init();
     }
