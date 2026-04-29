@@ -20,7 +20,7 @@ use yii\db\ActiveRecord;
  * @property string  $prefix
  * @property string  $message
  */
-class LogDbTargetModel extends ActiveRecord
+class LogDbTargetModel extends \skeeks\cms\base\ActiveRecord
 {
     /**
      * @inheritdoc
