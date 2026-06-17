@@ -10,8 +10,8 @@ namespace skeeks\cms\LogDbTarget\components;
 
 use skeeks\cms\backend\widgets\ActiveFormBackend;
 use skeeks\cms\base\Component;
+use skeeks\cms\assets\CmsAsset;
 use skeeks\cms\components\Cms;
-use skeeks\cms\logDbTarget\assets\LogDbTargetAsset;
 use skeeks\cms\models\CmsAgent;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
@@ -41,7 +41,10 @@ class LogDbTargetSettings extends Component
     {
         return array_merge(parent::descriptorConfig(), [
             'name' => \Yii::t('skeeks/logdb/app', 'Logging errors in the mysql database'),
-            'image' => [LogDbTargetAsset::class, 'icons/Database-mysql.svg'],
+            'image' => [
+                CmsAsset::class,
+                'images/icons/admin-menu/database.svg'
+            ],
         ]);
     }
 
