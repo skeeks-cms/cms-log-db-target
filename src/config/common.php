@@ -27,11 +27,32 @@ return [
             'commands' => [
 
                 'logDbTarget/agents/clear-logs' => [
+                    'jobType' => 'log-db-target.clear-logs',
                     'class'    => \skeeks\cms\agent\CmsAgent::class,
                     'name'     => ['skeeks/logdb/app', 'Cleaning mysql logs'],
                     'interval' => 3600 * 3,
                 ],
 
+            ],
+        ],
+
+        'jobRegistry' => [
+            'types' => [
+                'log-db-target.clear-logs' => [
+                    'type' => 'log-db-target.clear-logs',
+                    'title' => 'Чистка mysql логов',
+                    'handler' => \skeeks\cms\logDbTarget\jobs\LogCleanupJobHandler::class,
+                    'queue' => 'maintenance',
+                    'timeout' => 7200,
+                    'leaseSeconds' => 120,
+                    'maxAttempts' => 1,
+                    'idempotent' => false,
+                    'overlapPolicy' => 'skip',
+                    'permission' => \skeeks\cms\rbac\CmsManager::PERMISSION_ROLE_ADMIN_ACCESS,
+                    // This operation affects shared data across the installation's sites.
+                    'resourceKey' => static function () { return 'log-db-target:clear-logs'; },
+                    'dedupKey' => static function () { return 'log-db-target:clear-logs'; },
+                ],
             ],
         ],
 
